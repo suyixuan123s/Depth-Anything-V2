@@ -5,6 +5,7 @@ import numpy as np
 import open3d as o3d
 import cv2
 
+
 def generate_colored_point_cloud(color_image, depth_image, intrinsic_matrix):
     # 获取图像的尺寸，深度图是二维的 (height: 高度, width: 宽度)
     height, width = depth_image.shape
@@ -106,14 +107,12 @@ try:
             point_cloud = generate_colored_point_cloud(color_image, depth_image, intrinsic_matrix)
 
             # # 将点云保存为 PLY 文件
-            # o3d.io.write_point_cloud("../Point_cloud_files/colored_point_cloud.ply", point_cloud)
+            # o3d.io.write_point_cloud("../Point_cloud_Datasets/colored_point_cloud.ply", point_cloud)
             # print("点云已保存为 colored_point_cloud.ply")
             #
             # break  # 生成点云后退出循环
 
-
-
-            save_path = r'E:\ABB\AI\Depth-Anything-V2\Point_cloud_files\demo1106\colored_point_cloud1106.ply'
+            save_path = r'../Point_cloud_Datasets/demo1106/colored_point_cloud1106.ply'
             save_directory = os.path.dirname(save_path)  # 获取保存路径的目录部分
 
             # 检查并创建目录

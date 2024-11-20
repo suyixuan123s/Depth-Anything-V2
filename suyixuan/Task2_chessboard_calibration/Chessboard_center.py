@@ -12,7 +12,7 @@
 # square_size = 0.03  # 每个格子的大小为 0.03 米（30 毫米）
 #
 # # 读取新拍摄的图像
-# image_path = 'E:\\ABB\\AI\\Depth-Anything-V2\\Inter_Realsence_D345_Datasets\\color_image_20241025-170147.jpg'
+# image_path = 'E:\\ABB\\AI\\Depth-Anything-V2\\Intel_Realsense_D435_Datasets\\color_image_20241025-170147.jpg'
 # image = cv2.imread(image_path)
 #
 # if image is None:
@@ -82,7 +82,7 @@ chessboard_size = (11, 8)
 square_size = 0.03  # 每个格子的大小为 0.03 米（30 毫米）
 
 # 读取新拍摄的图像
-image_path = 'E:\ABB-Project\cc-wrs\ABB_Intel_Realsense\Dataset2\chessboard_image_0.jpg'
+image_path = 'E:\ABB\AI\Depth-Anything-V2\suyixuan\Intel_Realsense_D435_Datasets\ABB_Intel_Realsense\Dataset2\chessboard_image_0.jpg'
 image = cv2.imread(image_path)
 
 if image is None:

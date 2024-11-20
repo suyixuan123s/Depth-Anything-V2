@@ -5,7 +5,7 @@ import time
 import os
 
 # 定义保存图像的目录
-save_directory = r'E:\ABB\AI\Depth-Anything-V2\Inter_Realsence_D345_Datasets'
+save_directory = r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Intel_Realsense_D435_Datasets'
 
 # 确保目录存在
 os.makedirs(save_directory, exist_ok=True)

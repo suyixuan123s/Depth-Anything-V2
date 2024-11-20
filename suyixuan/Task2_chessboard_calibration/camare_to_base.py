@@ -17,7 +17,7 @@ obj_points[:, :2] = np.mgrid[0:chessboard_size[0], 0:chessboard_size[1]].T.resha
 obj_points *= square_size
 
 # 读取新拍摄的图像
-image_path = 'E:\ABB\AI\Depth-Anything-V2\Inter_Realsence_D345_Datasets\color_image_20241025-170147.jpg'
+image_path = '/suyixuan/Intel_Realsense_D435_Datasets/color_image_20241025-170147.jpg'
 image = cv2.imread(image_path)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 

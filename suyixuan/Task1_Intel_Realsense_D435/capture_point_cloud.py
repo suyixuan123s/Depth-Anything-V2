@@ -3,6 +3,7 @@ import numpy as np
 import open3d as o3d
 import cv2
 
+
 def capture_point_cloud():
     # 配置RealSense相机的管道，设置深度和颜色流的格式和分辨率
     pipeline = rs.pipeline()  # 创建RealSense的管道对象，用于流数据
@@ -49,7 +50,7 @@ def capture_point_cloud():
                 points = pc.calculate(depth_frame)  # 基于深度图计算点云
 
                 # 将点云的顶点（3D坐标）转换为Open3D格式
-                vtx= np.asanyarray(points.get_vertices()).view(np.float32).reshape(-1, 3)  # 获取点云顶点并转换为NumPy数组
+                vtx = np.asanyarray(points.get_vertices()).view(np.float32).reshape(-1, 3)  # 获取点云顶点并转换为NumPy数组
                 tex = np.asanyarray(points.get_texture_coordinates()).view(np.float32).reshape(-1, 2)  # 获取点云纹理坐标（UV）
 
                 # 使用Open3D创建一个新的点云对象并加载顶点数据
@@ -72,18 +73,20 @@ def capture_point_cloud():
                 point_cloud.colors = o3d.utility.Vector3dVector(colors / 255.0)  # 将颜色数据归一化并赋值给点云
 
                 # # 保存带颜色的点云到文件
-                # o3d.io.write_point_cloud("../Point_cloud_files/output_point_cloud.ply", point_cloud)  # 保存点云为PLY格式文件
+                # o3d.io.write_point_cloud("../Point_cloud_Datasets/output_point_cloud.ply", point_cloud)  # 保存点云为PLY格式文件
                 # print("点云文件已保存: output_point_cloud.ply")  # 输出保存成功信息
                 # break  # 退出循环，停止捕获
 
                 # 保存带颜色的点云到文件
-                o3d.io.write_point_cloud("../Point_cloud_files/demo24/output_point_cloud1111.ply", point_cloud)  # 保存点云为PLY格式文件
+                o3d.io.write_point_cloud("../Point_cloud_Datasets/demo24/output_point_cloud1111.ply",
+                                         point_cloud)  # 保存点云为PLY格式文件
                 print("点云文件已保存: output_point_cloud1111.ply")  # 输出保存成功信息
                 break  # 退出循环，停止捕获
     finally:
         # 停止相机流并关闭OpenCV窗口
         pipeline.stop()  # 停止相机捕获
         cv2.destroyAllWindows()  # 关闭OpenCV窗口
+
 
 if __name__ == "__main__":
     capture_point_cloud()  # 调用主函数，开始捕获点云

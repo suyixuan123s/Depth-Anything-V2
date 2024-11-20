@@ -1,3 +1,11 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/20 10:36
+File: Analyze_segmented_object_point_cloud.py
+Description:
+"""
+
+
 import open3d as o3d
 import numpy as np
 
@@ -23,9 +31,9 @@ num_points = points.shape[0]
 # 计算中心点（所有点的平均坐标）
 center_point = points.mean(axis=0)
 
-# 定义从相机坐标系到仿真坐标系的外参
-alpha, beta, gamma = -148.0, -0.4, -178.0
-tx, ty, tz = 0.525, 0.76, 1.25
+# 定义从仿真坐标系到相机坐标系的外参
+alpha, beta, gamma = 148.0, 0.4, 178.0  # 旋转角度
+tx, ty, tz = -0.525, -0.76, -1.25        # 平移
 
 def get_transformation_matrix(alpha, beta, gamma, tx, ty, tz):
     alpha, beta, gamma = np.radians([alpha, beta, gamma])
@@ -39,16 +47,16 @@ def get_transformation_matrix(alpha, beta, gamma, tx, ty, tz):
     return transformation_matrix
 
 # 获取转换矩阵
-transformation_matrix = get_transformation_matrix(alpha, beta, gamma, tx, ty, tz)
+transformation_matrix_sim_to_cam = get_transformation_matrix(alpha, beta, gamma, tx, ty, tz)
 
 # 将中心点转换到齐次坐标系（添加1作为第四维）
 center_point_homogeneous = np.append(center_point, 1)
 
-# 使用变换矩阵将中心点转换到仿真坐标系
-sim_coords_center = transformation_matrix @ center_point_homogeneous
+# 使用变换矩阵将中心点转换到相机坐标系
+camera_coords_center = transformation_matrix_sim_to_cam @ center_point_homogeneous
 
 # 提取转换后的3D坐标
-sim_coords_center = sim_coords_center[:3] * 1000  # 转换为毫米单位
+camera_coords_center = camera_coords_center[:3]  # 提取前三维
 
 # 创建一个球体作为中心点高亮显示
 center_sphere = o3d.geometry.TriangleMesh.create_sphere(radius=0.01)  # 设置球体的半径
@@ -60,8 +68,8 @@ o3d.visualization.draw_geometries([point_cloud, center_sphere], window_name="Poi
 
 # 输出结果
 print(f"点的数量: {num_points}")
-print(f"中心点在相机坐标系下的位置: {center_point}")
-print(f"中心点在仿真坐标系下的位置: {sim_coords_center}")
+print(f"中心点在仿真坐标系下的位置: {center_point}")
+print(f"中心点在相机坐标系下的位置: {camera_coords_center}")
 
-# 返回点的数量、中心点（相机坐标系）、中心点（仿真坐标系）和颜色信息（如果存在）
-num_points, center_point, sim_coords_center, colors
+# 返回点的数量、中心点（仿真坐标系）、中心点（相机坐标系）和颜色信息（如果存在）
+num_points, center_point, camera_coords_center, colors

@@ -23,7 +23,7 @@ def main():
     parser.add_argument('--max-depth', default=2, type=float,
                         help='深度图的最大深度值。')
     parser.add_argument('--img-path', type=str,
-                        default=r'E:\ABB\AI\Depth-Anything-V2\Inter_Realsence_D345_Datasets\color_image_20241026-194402.jpg',
+                        default=r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Intel_Realsense_D435_Datasets\color_image_20241026-194402.jpg',
                         help='输入图像或包含图像的目录路径。')
     parser.add_argument('--outdir', type=str, default=r'E:\ABB\AI\Depth-Anything-V2\metric_depth\output01',
                         help='保存输出点云的目录。')

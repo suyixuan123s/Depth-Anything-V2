@@ -42,7 +42,7 @@ def main():
                         help='Path to the pre-trained model weights.')
     parser.add_argument('--max-depth', default=2, type=float,
                         help='Maximum depth value for the depth map.')
-    # parser.add_argument('--img-path', type=str,  default=r'E:\ABB\AI\Depth-Anything-V2\Inter_Realsence_D345_Datasets\color_image_20241022-143158.jpg',
+    # parser.add_argument('--img-path', type=str,  default=r'E:\ABB\AI\Depth-Anything-V2\Intel_Realsense_D435_Datasets\color_image_20241022-143158.jpg',
     #                     help='Path to the input image or directory containing images.')
 
     parser.add_argument('--img-path', type=str,

@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--img-path', type=str, default=r'E:\ABB\AI\Depth-Anything-V2\Inter_Realsence_D345_Datasets\color_image_20241026-194402.jpg')
     parser.add_argument('--input-size', type=int, default=320)
-    parser.add_argument('--outdir', type=str, default=r'E:\ABB\AI\Depth-Anything-V2\metric_depth\output')
+    parser.add_argument('--outdir', type=str, default=r'E:\ABB\AI\Depth-Anything-V2\metric_depth\output1')
 
     parser.add_argument('--encoder', type=str, default='vitl', choices=['vits', 'vitb', 'vitl', 'vitg'])
     parser.add_argument('--load-from', type=str, default=r'E:\ABB\AI\Depth-Anything-V2\checkpoints\depth_anything_v2_metric_hypersim_vitl.pth')

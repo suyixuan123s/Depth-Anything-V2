@@ -1,6 +1,9 @@
-'''
-两点云文件重合显示
-'''
+"""
+Author: Yixuan Su
+Date: 2024/11/20 10:36
+File: Point_cloud_visualazation_size.py
+Description:
+"""
 
 import open3d as o3d
 import numpy as np
@@ -57,7 +60,7 @@ vis.destroy_window()
 # import numpy as np
 #
 # # 加载点云文件
-# pcd1 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\Point_cloud_files\\demo24\\colored_point_cloud.ply")
+# pcd1 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\Point_cloud_Datasets\\demo24\\colored_point_cloud.ply")
 # pcd2 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\metric_depth\\output1\\color_image_20241024-191620.ply")
 #
 # # 获取两个点云的包围盒，并获取其尺寸
@@ -130,7 +133,7 @@ vis.destroy_window()
 # import numpy as np
 #
 # # 加载点云文件
-# pcd1 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\Point_cloud_files\\demo24\\colored_point_cloud.ply")
+# pcd1 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\Point_cloud_Datasets\\demo24\\colored_point_cloud.ply")
 # pcd2 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\metric_depth\\output1\\color_image_20241024-191620.ply")
 #
 # # 获取两个点云的包围盒，并获取其尺寸
@@ -183,7 +186,7 @@ vis.destroy_window()
 # import numpy as np
 #
 # # 加载点云文件
-# pcd1 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\Point_cloud_files\\demo24\\colored_point_cloud.ply")
+# pcd1 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\Point_cloud_Datasets\\demo24\\colored_point_cloud.ply")
 # pcd2 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\metric_depth\\output1\\color_image_20241024-191620.ply")
 #
 # # 获取两个点云的包围盒，并获取其尺寸
@@ -236,7 +239,7 @@ vis.destroy_window()
 # import numpy as np
 #
 # # 加载点云文件
-# pcd1 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\Point_cloud_files\\demo24\\colored_point_cloud.ply")
+# pcd1 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\Point_cloud_Datasets\\demo24\\colored_point_cloud.ply")
 # pcd2 = o3d.io.read_point_cloud("E:\\ABB\\AI\\Depth-Anything-V2\\metric_depth\\output1\\color_image_20241024-191620.ply")
 #
 # # 获取两个点云的包围盒，并获取其尺寸

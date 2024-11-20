@@ -1,7 +1,14 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/20 10:36
+File: ABB_workspace_information_extract.py
+Description:
+"""
+
 import json
 
 # 读取JSON文件
-file_path = r'E:\ABB\AI\Depth-Anything-V2\Inter_Realsence_D345\ABB\workspace.json'  # 根据实际路径修改
+file_path = 'workspace.json'  # 根据实际路径修改
 with open(file_path, 'r') as file:
     data = json.load(file)
 
