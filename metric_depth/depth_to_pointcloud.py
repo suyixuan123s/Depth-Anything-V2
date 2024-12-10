@@ -46,7 +46,7 @@ def main():
     #                     help='Path to the input image or directory containing images.')
 
     parser.add_argument('--img-path', type=str,
-                        default=r'E:\ABB\AI\Depth-Anything-V2\Inter_Realsence_D345_Datasets\color_image_20241026-194402.jpg',
+                        default=r'E:\ABB\AI\Depth-Anything-V2\demo\color_image_20241203-104911.jpg',
                         help='Path to the input image or directory containing images.')
     # parser.add_argument('--outdir', type=str, default=r'E:\ABB\AI\Depth-Anything-V2\metric_depth\output',
     #                     help='Directory to save the output point clouds.')

@@ -5,7 +5,7 @@ import time
 import os
 
 # 定义保存图像的目录
-save_directory = r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Intel_Realsense_D435_Datasets'
+save_directory = r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Intel_Realsense_D435_Datasets\demo'
 
 # 确保目录存在
 os.makedirs(save_directory, exist_ok=True)
@@ -14,6 +14,7 @@ os.makedirs(save_directory, exist_ok=True)
 
 
 pipeline = rs.pipeline()
+
 config = rs.config()
 
 # 配置相机流
@@ -44,6 +45,15 @@ try:
 
         if not color_frame or not depth_frame:
             continue
+
+        # # 获取彩色图像的内参
+        # color_intrinsics = color_frame.profile.as_video_stream_profile().intrinsics
+        # print(f"Camera Intrinsics:")
+        # print(f"Width: {color_intrinsics.width}, Height: {color_intrinsics.height}")
+        # print(f"fx: {color_intrinsics.fx}, fy: {color_intrinsics.fy}")
+        # print(f"ppx: {color_intrinsics.ppx}, ppy: {color_intrinsics.ppy}")lllll
+        # print(f"Distortion Model: {color_intrinsics.model}")
+        # print(f"Distortion Coefficients: {color_intrinsics.coeffs}")
 
         # 将图像转换为numpy数组
         color_image = np.asanyarray(color_frame.get_data())

@@ -1,5 +1,4 @@
 import os
-
 import pyrealsense2 as rs
 import numpy as np
 import open3d as o3d
@@ -54,7 +53,7 @@ config = rs.config()
 
 # 配置彩色和深度流，640x480 分辨率，30 帧率
 # config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
-# config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
+# config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)0-
 
 
 config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 30)  # 启用深度流，分辨率640x480，帧率30fps
@@ -112,7 +111,7 @@ try:
             #
             # break  # 生成点云后退出循环
 
-            save_path = r'../Point_cloud_Datasets/demo1106/colored_point_cloud1106.ply'
+            save_path = r'E:\ABB\AI\Depth-Anything-V2\demo\colored_point_cloud1203.ply'
             save_directory = os.path.dirname(save_path)  # 获取保存路径的目录部分
 
             # 检查并创建目录

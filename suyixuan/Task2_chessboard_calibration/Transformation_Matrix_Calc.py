@@ -1,32 +1,3 @@
-# import numpy as np
-#
-#
-# def get_transformation_matrix():
-#     # 旋转矩阵 R
-#     R = np.array([[0, -1, 0],
-#                   [1, 0, 0],
-#                   [0, 0, -1]])
-#
-#     # 平移向量 t
-#     t = np.array([[0.41],
-#                   [0.050],
-#                   [0.011]])
-#
-#     # 构造齐次变换矩阵 T
-#     T = np.eye(4)  # 创建一个 4x4 的单位矩阵
-#     T[:3, :3] = R  # 设置旋转部分
-#     T[:3, 3] = t.flatten()  # 设置平移部分
-#
-#     return T
-#
-#
-# # 计算并打印变换矩阵
-# transformation_matrix = get_transformation_matrix()
-# print("Transformation Matrix from Chessboard Coordinate System to Table Coordinate System:")
-# print(transformation_matrix)
-
-
-
 import numpy as np
 
 
