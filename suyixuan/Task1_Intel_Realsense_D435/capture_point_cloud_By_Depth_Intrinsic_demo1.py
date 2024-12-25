@@ -3,7 +3,13 @@ import pyrealsense2 as rs
 import numpy as np
 import open3d as o3d
 import cv2
+import time
 
+# 定义保存图像的目录
+save_directory = r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Realsense_Point_cloud_Datasets'
+
+# 确保目录存在
+os.makedirs(save_directory, exist_ok=True)
 
 def generate_colored_point_cloud(color_image, depth_image, intrinsic_matrix):
     # 获取图像的尺寸，深度图是二维的 (height: 高度, width: 宽度)
@@ -93,6 +99,8 @@ try:
         # 如果按下了 Enter 键 (键码为 13)，则生成点云
         if key == 13:
 
+            timestamp = time.strftime("%Y%m%d-%H%M%S")
+
             # 将深度帧转换为 NumPy 数组
             depth_image = np.asanyarray(depth_frame.get_data())
 
@@ -105,22 +113,18 @@ try:
             # 调用函数生成带有颜色信息的 3D 点云
             point_cloud = generate_colored_point_cloud(color_image, depth_image, intrinsic_matrix)
 
-            # # 将点云保存为 PLY 文件
-            # o3d.io.write_point_cloud("../Point_cloud_Datasets/colored_point_cloud.ply", point_cloud)
-            # print("点云已保存为 colored_point_cloud.ply")
-            #
-            # break  # 生成点云后退出循环
+            point_cloud_path = os.path.join(save_directory, f'color_image_{timestamp}.ply')
 
-            save_path = r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Realsense_Point_cloud_Datasets\colored_point_cloud1203.ply'
-            save_directory = os.path.dirname(save_path)  # 获取保存路径的目录部分
+            # save_path = r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Realsense_Point_cloud_Datasets\colored_point_cloud1203.ply'
+            # save_directory = os.path.dirname(save_path)  # 获取保存路径的目录部分
 
             # 检查并创建目录
             if not os.path.exists(save_directory):
                 os.makedirs(save_directory)
 
             # 将点云保存为 PLY 文件
-            o3d.io.write_point_cloud(save_path, point_cloud)
-            print(f"点云已保存为 {save_path}")
+            o3d.io.write_point_cloud(point_cloud_path, point_cloud)
+            print(f"点云已保存为 {point_cloud_path}")
 
             break  # 生成点云后退出循环
 
